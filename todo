@@ -6,3 +6,20 @@ ticket-app:
         ✔ adding script into package.json 
         ✔ adding .editorconfig
         ✔ adding @types
+    setup : 
+        ✔ src/controllers 
+        ✔ src/interface 
+        ✔ src/models
+        ✔ coding setupserver
+        ✔ coding app.ts
+        ☐ database setup @high
+        ☐ setup of routes @high
+    schema : 
+        ☐ user schema @low
+        ☐ password @low
+        ☐ register user fonction @low
+    test Postman : 
+        ☐ create registretion  with jsonwebtoken @low
+        ☐ login user method @low
+        
+
