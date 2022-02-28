@@ -1,3 +1,4 @@
 ticket-app: 
     ticket-app-back:
         ✔ install dependencies
+        ✔ install eslint 
