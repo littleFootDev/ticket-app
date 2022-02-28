@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./dist/app/app.js",
     "dev": "nodemon src/app.ts",
-    "build" : "tsc -p ."
+    "build": "tsc -p ."
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,12 @@
     "mongoose": "^6.2.3"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.5",
+    "@types/koa-router": "^7.4.4",
+    "@types/koa2-cors": "^2.0.2",
+    "@types/mongoose": "^5.11.97",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "eslint": "^8.10.0",

@@ -1,4 +1,8 @@
 ticket-app: 
     ticket-app-back:
         ✔ install dependencies
-        ✔ install eslint 
+        ✔ install eslint
+        ✔ tsconfig.json 
+        ✔ adding script into package.json 
+        ✔ adding .editorconfig
+        ✔ adding @types
