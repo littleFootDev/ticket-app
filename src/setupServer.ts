@@ -1,6 +1,7 @@
 import Koa from "koa";
 import koaCors from "koa2-cors";
 import bodyParser from "koa-bodyparser";
+import { registerRoutes } from "./routes";
 
 async function serverSetup() {
   const server: Koa = new Koa();
@@ -10,6 +11,11 @@ async function serverSetup() {
 function middlewares(server : Koa) {
     server.use(bodyParser());
     server.use(koaCors());
+
+
+    const routes = registerRoutes().routes();
+
+    server.use(routes);
 }
 async function startServer(server: Koa) {
   try {
