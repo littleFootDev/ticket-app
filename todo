@@ -13,10 +13,10 @@ ticket-app:
         ✔ coding setupserver
         ✔ coding app.ts
         ✔ database setup
-        ☐ setup of routes @high
+        ✔ setup of routes
     schema : 
-        ☐ user schema @low
-        ☐ password @low
+        ✔ user schema 
+        ✔ password 
         ☐ register user fonction @low
     test Postman : 
         ☐ create registretion  with jsonwebtoken @low
