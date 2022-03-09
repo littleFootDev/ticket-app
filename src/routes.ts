@@ -6,6 +6,7 @@ export function registerRoutes() {
     
 
     router.post('/register', Auth.prototype.create)
+    router.post('/login', Auth.prototype.login)
 
     return router;
 }
