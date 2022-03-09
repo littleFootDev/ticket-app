@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { IUser } from "../../interface/user.interface";
-import {userSchema} from "./User.schema";
+import { userSchema } from "./User.schema";
 
-const userModel: mongoose.Model<IUser> = new mongoose.Model('User', userSchema);
+const userModel: mongoose.Model<IUser> = mongoose.model("User", userSchema);
 
-export {userModel as UserModel};
+export { userModel as UserModel };
