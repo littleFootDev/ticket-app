@@ -6,11 +6,10 @@ import { UserModel } from "../../models/user/User.model";
 
 const RANDOM_VALUE_MULTIPLIER = 10001;
 export class Ticket {
-
-  public async getAllTickets(ctx: Context): Promise<void>{
+  public async getAllTickets(ctx: Context): Promise<void> {
     try {
-      const tickets = await TicketModel.find({}).sort({created: -1});
-      ctx.body = { message: 'All tickets', tickets};
+      const tickets = await TicketModel.find({}).sort({ created: -1 });
+      ctx.body = { message: "All tickets", tickets };
     } catch (error) {
       ctx.body = error;
     }
@@ -46,6 +45,37 @@ export class Ticket {
         );
         ctx.body = { message: "Ticket adding successfully", ticket };
       }
+    } catch (error) {
+      ctx.body = error;
+    }
+  }
+  public async editTicket(ctx: Context): Promise<void> {
+    try {
+      const body: ITicket = ctx.request.body;
+      const { id } = ctx.params;
+      const schema = Joi.object().keys({
+        fullName: Joi.string().optional(),
+        email: Joi.string().optional(),
+        subject: Joi.string().optional(),
+        description: Joi.string().optional(),
+        department: Joi.string().optional(),
+        priority: Joi.string().optional(),
+      });
+      const value: ITicket = await schema.validateAsync(body);
+      await TicketModel.updateOne(
+        {
+          _id: id,
+        },
+        {
+          fullname: value.fullname,
+          email: value.email,
+          subject: value.subject,
+          description: value.description,
+          department: value.department,
+          priority: value.priority,
+        }
+      );
+      ctx.body = { message: "Ticket updated successfully" };
     } catch (error) {
       ctx.body = error;
     }
