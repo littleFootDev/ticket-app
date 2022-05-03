@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
-import { versions } from "process";
 import {ITicket} from "../../interface/ticket.interface";
 import {ticketSchema} from './Ticket.Schema';
 
 
-const ticketModel: mongoose.Model<ITicket> = new mongoose.Model("Ticket", ticketSchema);
+const ticketModel: mongoose.Model<ITicket> = mongoose.model("Ticket", ticketSchema);
 
-export {ticketModel as TIcketModel};
+export {ticketModel as TicketModel};
