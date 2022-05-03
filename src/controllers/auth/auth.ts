@@ -3,7 +3,7 @@ import JWT from "jsonwebtoken";
 import HTTP_STATUS from "http-status-codes";
 import { UserModel } from "../../models/user/User.model";
 import { firstLetterUppercase } from "../../helpers/helpers";
-import { createWriteStream } from "fs";
+
 
 export class Auth {
   public async create(ctx: Context): Promise<void> {
