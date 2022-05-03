@@ -1,6 +1,7 @@
 import Router from 'koa-router';
 import { Auth } from './controllers/auth/auth';
 import { Ticket } from './controllers/ticket/ticket';
+import { User } from './controllers/user/user';
 import { verifyToken } from './helpers/auth';
 
 export function registerRoutes() {
@@ -16,6 +17,9 @@ export function registerRoutes() {
     router.put('/tickets/:id', verifyToken, Ticket.prototype.editTicket)
     router.put('/tickets/close-tickets/:id', verifyToken, Ticket.prototype.closeTicket)
     router.delete('/tickets/:id', verifyToken, Ticket.prototype.deleteTicket)
+
+    // USER ROUTES 
+    router.get('/users', verifyToken, User.prototype.getUser)
 
     return router;
 }
